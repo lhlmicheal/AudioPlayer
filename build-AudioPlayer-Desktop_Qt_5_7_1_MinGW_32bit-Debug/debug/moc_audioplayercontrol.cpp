@@ -1,16 +1,16 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'audioplayermanager.h'
+** Meta object code from reading C++ file 'audioplayercontrol.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.7.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../AudioPlayer/audioplayermanager.h"
+#include "../../AudioPlayer/audioplayercontrol.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'audioplayermanager.h' doesn't include <QObject>."
+#error "The header file 'audioplayercontrol.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.7.1. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_AudioPayerManager_t {
-    QByteArrayData data[14];
-    char stringdata0[158];
+    QByteArrayData data[17];
+    char stringdata0[184];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,19 +35,23 @@ QT_MOC_LITERAL(2, 27, 0), // ""
 QT_MOC_LITERAL(3, 28, 3), // "err"
 QT_MOC_LITERAL(4, 32, 19), // "playProgressChanged"
 QT_MOC_LITERAL(5, 52, 7), // "percent"
-QT_MOC_LITERAL(6, 60, 15), // "positionChanged"
-QT_MOC_LITERAL(7, 76, 3), // "pos"
-QT_MOC_LITERAL(8, 80, 17), // "playSliderChanged"
-QT_MOC_LITERAL(9, 98, 17), // "palyStatueChanged"
-QT_MOC_LITERAL(10, 116, 6), // "Statue"
-QT_MOC_LITERAL(11, 123, 11), // "playOrPause"
-QT_MOC_LITERAL(12, 135, 8), // "playStop"
-QT_MOC_LITERAL(13, 144, 13) // "volumeChanged"
+QT_MOC_LITERAL(6, 60, 15), // "audioFilechange"
+QT_MOC_LITERAL(7, 76, 4), // "file"
+QT_MOC_LITERAL(8, 81, 4), // "size"
+QT_MOC_LITERAL(9, 86, 15), // "positionChanged"
+QT_MOC_LITERAL(10, 102, 3), // "pos"
+QT_MOC_LITERAL(11, 106, 17), // "playSliderChanged"
+QT_MOC_LITERAL(12, 124, 17), // "palyStatueChanged"
+QT_MOC_LITERAL(13, 142, 6), // "Statue"
+QT_MOC_LITERAL(14, 149, 11), // "playOrPause"
+QT_MOC_LITERAL(15, 161, 8), // "playStop"
+QT_MOC_LITERAL(16, 170, 13) // "volumeChanged"
 
     },
     "AudioPayerManager\0errorMsg\0\0err\0"
-    "playProgressChanged\0percent\0positionChanged\0"
-    "pos\0playSliderChanged\0palyStatueChanged\0"
+    "playProgressChanged\0percent\0audioFilechange\0"
+    "file\0size\0positionChanged\0pos\0"
+    "playSliderChanged\0palyStatueChanged\0"
     "Statue\0playOrPause\0playStop\0volumeChanged"
 };
 #undef QT_MOC_LITERAL
@@ -58,33 +62,35 @@ static const uint qt_meta_data_AudioPayerManager[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       8,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       2,       // signalCount
+       3,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   54,    2, 0x06 /* Public */,
-       4,    1,   57,    2, 0x06 /* Public */,
+       1,    1,   59,    2, 0x06 /* Public */,
+       4,    1,   62,    2, 0x06 /* Public */,
+       6,    2,   65,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       6,    1,   60,    2, 0x08 /* Private */,
-       8,    1,   63,    2, 0x08 /* Private */,
-       9,    1,   66,    2, 0x08 /* Private */,
-      11,    0,   69,    2, 0x08 /* Private */,
-      12,    0,   70,    2, 0x08 /* Private */,
-      13,    1,   71,    2, 0x08 /* Private */,
+       9,    1,   70,    2, 0x08 /* Private */,
+      11,    1,   73,    2, 0x08 /* Private */,
+      12,    1,   76,    2, 0x08 /* Private */,
+      14,    0,   79,    2, 0x08 /* Private */,
+      15,    0,   80,    2, 0x08 /* Private */,
+      16,    1,   81,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
-    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::ULongLong,    5,
+    QMetaType::Void, QMetaType::QString, QMetaType::ULongLong,    7,    8,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::LongLong,    7,
-    QMetaType::Void, QMetaType::Int,    2,
-    QMetaType::Void, 0x80000000 | 10,    2,
+    QMetaType::Void, QMetaType::LongLong,   10,
+    QMetaType::Void, QMetaType::ULongLong,    2,
+    QMetaType::Void, 0x80000000 | 13,    2,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    5,
@@ -99,13 +105,14 @@ void AudioPayerManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->errorMsg((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 1: _t->playProgressChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 2: _t->positionChanged((*reinterpret_cast< qint64(*)>(_a[1]))); break;
-        case 3: _t->playSliderChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 4: _t->palyStatueChanged((*reinterpret_cast< Statue(*)>(_a[1]))); break;
-        case 5: _t->playOrPause(); break;
-        case 6: _t->playStop(); break;
-        case 7: _t->volumeChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 1: _t->playProgressChanged((*reinterpret_cast< quint64(*)>(_a[1]))); break;
+        case 2: _t->audioFilechange((*reinterpret_cast< QString(*)>(_a[1])),(*reinterpret_cast< quint64(*)>(_a[2]))); break;
+        case 3: _t->positionChanged((*reinterpret_cast< qint64(*)>(_a[1]))); break;
+        case 4: _t->playSliderChanged((*reinterpret_cast< quint64(*)>(_a[1]))); break;
+        case 5: _t->palyStatueChanged((*reinterpret_cast< Statue(*)>(_a[1]))); break;
+        case 6: _t->playOrPause(); break;
+        case 7: _t->playStop(); break;
+        case 8: _t->volumeChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -119,9 +126,16 @@ void AudioPayerManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
             }
         }
         {
-            typedef void (AudioPayerManager::*_t)(int );
+            typedef void (AudioPayerManager::*_t)(quint64 );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&AudioPayerManager::playProgressChanged)) {
                 *result = 1;
+                return;
+            }
+        }
+        {
+            typedef void (AudioPayerManager::*_t)(QString , quint64 );
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&AudioPayerManager::audioFilechange)) {
+                *result = 2;
                 return;
             }
         }
@@ -153,13 +167,13 @@ int AudioPayerManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 9;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 9)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 8;
+        _id -= 9;
     }
     return _id;
 }
@@ -172,9 +186,16 @@ void AudioPayerManager::errorMsg(QString _t1)
 }
 
 // SIGNAL 1
-void AudioPayerManager::playProgressChanged(int _t1)
+void AudioPayerManager::playProgressChanged(quint64 _t1)
 {
     void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
+}
+
+// SIGNAL 2
+void AudioPayerManager::audioFilechange(QString _t1, quint64 _t2)
+{
+    void *_a[] = { Q_NULLPTR, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 2, _a);
 }
 QT_END_MOC_NAMESPACE

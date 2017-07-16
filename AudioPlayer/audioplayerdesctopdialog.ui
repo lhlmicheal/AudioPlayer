@@ -75,11 +75,49 @@
       </widget>
      </item>
      <item>
-      <widget class="QProgressBar" name="AudioProBar">
-       <property name="value">
-        <number>0</number>
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>8</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QSlider" name="playProSlider">
+       <property name="acceptDrops">
+        <bool>true</bool>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
       </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>8</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
      <item>
       <widget class="QLabel" name="totalProlabel">
@@ -94,8 +132,15 @@
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
       <widget class="QPushButton" name="playModelBtn">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; color:#aa0000;&quot;&gt;Play Model&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
-        <string>单曲循环</string>
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/image/32_32/vinyl_symbol.png</normaloff>:/image/32_32/vinyl_symbol.png</iconset>
        </property>
       </widget>
      </item>
@@ -114,22 +159,113 @@
      </item>
      <item>
       <widget class="QPushButton" name="preBtn">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; color:#aa0000;&quot;&gt;Back Forward&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
-        <string>&lt;&lt;</string>
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normalon>:/image/32_32/play_backward.png</normalon>
+         <disabledoff>:/image/32_32/play_backward.png</disabledoff>
+        </iconset>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="playOrPauseBtn">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; color:#aa0000;&quot;&gt;Pause/Play&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
-        <string>||</string>
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/image/32_32/play_button.png</normaloff>
+         <normalon>:/image/32_32/audio_play_play.png</normalon>
+         <disabledoff>:/image/32_32/play_button.png</disabledoff>:/image/32_32/play_button.png</iconset>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="nextBtn">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; color:#aa0000;&quot;&gt;Forward&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
        <property name="text">
-        <string>&gt;&gt;</string>
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/image/32_32/play_forward.png</normaloff>:/image/32_32/play_forward.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="stopBtn">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; color:#aa0000;&quot;&gt;Stop&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/image/32_32/stop.png</normaloff>:/image/32_32/stop.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="soundBtn">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="image.qrc">
+         <normaloff>:/image/32_32/audio_sound_on.png</normaloff>
+         <disabledoff>:/image/32_32/audio_sound_on.png</disabledoff>
+         <activeoff>:/image/32_32/audio_sound_on.png</activeoff>
+         <selectedoff>:/image/32_32/audio_sound_on.png</selectedoff>:/image/32_32/audio_sound_on.png</iconset>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="soundVolumnSlider">
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; color:#aa0000;&quot;&gt;Volumn&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
       </widget>
      </item>
@@ -137,6 +273,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="image.qrc"/>
+ </resources>
  <connections/>
 </ui>

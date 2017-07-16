@@ -2,6 +2,7 @@
 #define AUDIOPLAYERDESCTOPDIALOG_H
 
 #include <QDialog>
+#include <audioplayercontrol.h>
 
 namespace Ui {
 class AudioPlayerDesctopDialog;
@@ -17,11 +18,16 @@ public:
 
 private slots:
     void fileSelected();
-    void updateAudioProgress();
+    void updateAudioProgress(quint64 percent);
+    void soundEnabled(bool);
+    void error(QString err);
+    void audioFileChanged(QString fileName, qint64 size);
 
 private:
     Ui::AudioPlayerDesctopDialog *ui;
     QString mFiles;
+    AudioPayerManager mAudioControl;
+    void initDialog();
 };
 
 #endif // AUDIOPLAYERDESCTOPDIALOG_H

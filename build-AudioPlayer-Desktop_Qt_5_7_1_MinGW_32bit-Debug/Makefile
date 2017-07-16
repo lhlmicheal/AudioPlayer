@@ -211,8 +211,10 @@ Makefile: ../AudioPlayer/AudioPlayer.pro C:/Qt/Qt5.7.1/5.7/mingw53_32/mkspecs/wi
 		C:/Qt/Qt5.7.1/5.7/mingw53_32/mkspecs/features/lex.prf \
 		../AudioPlayer/AudioPlayer.pro \
 		C:/Qt/Qt5.7.1/5.7/mingw53_32/lib/qtmaind.prl \
+		C:/Qt/Qt5.7.1/5.7/mingw53_32/lib/Qt5Multimedia.prl \
 		C:/Qt/Qt5.7.1/5.7/mingw53_32/lib/Qt5Widgets.prl \
 		C:/Qt/Qt5.7.1/5.7/mingw53_32/lib/Qt5Gui.prl \
+		C:/Qt/Qt5.7.1/5.7/mingw53_32/lib/Qt5Network.prl \
 		C:/Qt/Qt5.7.1/5.7/mingw53_32/lib/Qt5Core.prl
 	$(QMAKE) -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" -o Makefile ..\AudioPlayer\AudioPlayer.pro
 C:/Qt/Qt5.7.1/5.7/mingw53_32/mkspecs/features/spec_pre.prf:
@@ -367,8 +369,10 @@ C:/Qt/Qt5.7.1/5.7/mingw53_32/mkspecs/features/yacc.prf:
 C:/Qt/Qt5.7.1/5.7/mingw53_32/mkspecs/features/lex.prf:
 ../AudioPlayer/AudioPlayer.pro:
 C:/Qt/Qt5.7.1/5.7/mingw53_32/lib/qtmaind.prl:
+C:/Qt/Qt5.7.1/5.7/mingw53_32/lib/Qt5Multimedia.prl:
 C:/Qt/Qt5.7.1/5.7/mingw53_32/lib/Qt5Widgets.prl:
 C:/Qt/Qt5.7.1/5.7/mingw53_32/lib/Qt5Gui.prl:
+C:/Qt/Qt5.7.1/5.7/mingw53_32/lib/Qt5Network.prl:
 C:/Qt/Qt5.7.1/5.7/mingw53_32/lib/Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" -o Makefile ..\AudioPlayer\AudioPlayer.pro

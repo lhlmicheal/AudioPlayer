@@ -1,0 +1,38 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/32_32/add.png</file>
+        <file>image/32_32/add_song_symbol.png</file>
+        <file>image/32_32/audio_album.png</file>
+        <file>image/32_32/audio_sound_off.png</file>
+        <file>image/32_32/audio_sound_on.png</file>
+        <file>image/32_32/bars-symbol.png</file>
+        <file>image/32_32/behand.png</file>
+        <file>image/32_32/clef_symbol.png</file>
+        <file>image/32_32/earphones.png</file>
+        <file>image/32_32/equalization_control.png</file>
+        <file>image/32_32/export_in.png</file>
+        <file>image/32_32/export_out.png</file>
+        <file>image/32_32/extend_down.png</file>
+        <file>image/32_32/extend_left.png</file>
+        <file>image/32_32/extend_right.png</file>
+        <file>image/32_32/extend_up.png</file>
+        <file>image/32_32/forward.png</file>
+        <file>image/32_32/headphone.png</file>
+        <file>image/32_32/mark_checked.png</file>
+        <file>image/32_32/mark_error.png</file>
+        <file>image/32_32/mark_right.png</file>
+        <file>image/32_32/megaphone_audio_tool.png</file>
+        <file>image/32_32/menu.png</file>
+        <file>image/32_32/music_note_symbol.png</file>
+        <file>image/32_32/pause.png</file>
+        <file>image/32_32/play_backward.png</file>
+        <file>image/32_32/play_button.png</file>
+        <file>image/32_32/play_forward.png</file>
+        <file>image/32_32/power.png</file>
+        <file>image/32_32/refresh.png</file>
+        <file>image/32_32/remove.png</file>
+        <file>image/32_32/stop.png</file>
+        <file>image/32_32/user_info.png</file>
+        <file>image/32_32/vinyl_symbol.png</file>
+    </qresource>
+</RCC>

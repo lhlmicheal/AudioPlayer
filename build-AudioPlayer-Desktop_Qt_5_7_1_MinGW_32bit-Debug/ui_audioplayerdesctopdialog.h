@@ -18,8 +18,8 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSlider>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 
@@ -38,7 +38,9 @@ public:
     QPushButton *selectBtn;
     QHBoxLayout *horizontalLayout_2;
     QLabel *curProlabel;
-    QProgressBar *AudioProBar;
+    QSpacerItem *horizontalSpacer_4;
+    QSlider *playProSlider;
+    QSpacerItem *horizontalSpacer_5;
     QLabel *totalProlabel;
     QHBoxLayout *horizontalLayout_3;
     QPushButton *playModelBtn;
@@ -46,6 +48,10 @@ public:
     QPushButton *preBtn;
     QPushButton *playOrPauseBtn;
     QPushButton *nextBtn;
+    QPushButton *stopBtn;
+    QSpacerItem *horizontalSpacer_3;
+    QPushButton *soundBtn;
+    QSlider *soundVolumnSlider;
 
     void setupUi(QDialog *AudioPlayerDesctopDialog)
     {
@@ -97,11 +103,21 @@ public:
 
         horizontalLayout_2->addWidget(curProlabel);
 
-        AudioProBar = new QProgressBar(AudioPlayerDesctopDialog);
-        AudioProBar->setObjectName(QStringLiteral("AudioProBar"));
-        AudioProBar->setValue(0);
+        horizontalSpacer_4 = new QSpacerItem(8, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
-        horizontalLayout_2->addWidget(AudioProBar);
+        horizontalLayout_2->addItem(horizontalSpacer_4);
+
+        playProSlider = new QSlider(AudioPlayerDesctopDialog);
+        playProSlider->setObjectName(QStringLiteral("playProSlider"));
+        playProSlider->setAcceptDrops(true);
+        playProSlider->setMaximum(100);
+        playProSlider->setOrientation(Qt::Horizontal);
+
+        horizontalLayout_2->addWidget(playProSlider);
+
+        horizontalSpacer_5 = new QSpacerItem(8, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_5);
 
         totalProlabel = new QLabel(AudioPlayerDesctopDialog);
         totalProlabel->setObjectName(QStringLiteral("totalProlabel"));
@@ -115,6 +131,9 @@ public:
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         playModelBtn = new QPushButton(AudioPlayerDesctopDialog);
         playModelBtn->setObjectName(QStringLiteral("playModelBtn"));
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/image/32_32/vinyl_symbol.png"), QSize(), QIcon::Normal, QIcon::Off);
+        playModelBtn->setIcon(icon);
 
         horizontalLayout_3->addWidget(playModelBtn);
 
@@ -124,18 +143,64 @@ public:
 
         preBtn = new QPushButton(AudioPlayerDesctopDialog);
         preBtn->setObjectName(QStringLiteral("preBtn"));
+        QIcon icon1;
+        icon1.addFile(QStringLiteral(":/image/32_32/play_backward.png"), QSize(), QIcon::Normal, QIcon::On);
+        icon1.addFile(QStringLiteral(":/image/32_32/play_backward.png"), QSize(), QIcon::Disabled, QIcon::Off);
+        preBtn->setIcon(icon1);
 
         horizontalLayout_3->addWidget(preBtn);
 
         playOrPauseBtn = new QPushButton(AudioPlayerDesctopDialog);
         playOrPauseBtn->setObjectName(QStringLiteral("playOrPauseBtn"));
+        QIcon icon2;
+        icon2.addFile(QStringLiteral(":/image/32_32/play_button.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon2.addFile(QStringLiteral(":/image/32_32/audio_play_play.png"), QSize(), QIcon::Normal, QIcon::On);
+        icon2.addFile(QStringLiteral(":/image/32_32/play_button.png"), QSize(), QIcon::Disabled, QIcon::Off);
+        playOrPauseBtn->setIcon(icon2);
+        playOrPauseBtn->setCheckable(false);
+        playOrPauseBtn->setChecked(false);
 
         horizontalLayout_3->addWidget(playOrPauseBtn);
 
         nextBtn = new QPushButton(AudioPlayerDesctopDialog);
         nextBtn->setObjectName(QStringLiteral("nextBtn"));
+        QIcon icon3;
+        icon3.addFile(QStringLiteral(":/image/32_32/play_forward.png"), QSize(), QIcon::Normal, QIcon::Off);
+        nextBtn->setIcon(icon3);
 
         horizontalLayout_3->addWidget(nextBtn);
+
+        stopBtn = new QPushButton(AudioPlayerDesctopDialog);
+        stopBtn->setObjectName(QStringLiteral("stopBtn"));
+        QIcon icon4;
+        icon4.addFile(QStringLiteral(":/image/32_32/stop.png"), QSize(), QIcon::Normal, QIcon::Off);
+        stopBtn->setIcon(icon4);
+
+        horizontalLayout_3->addWidget(stopBtn);
+
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_3);
+
+        soundBtn = new QPushButton(AudioPlayerDesctopDialog);
+        soundBtn->setObjectName(QStringLiteral("soundBtn"));
+        QIcon icon5;
+        icon5.addFile(QStringLiteral(":/image/32_32/audio_sound_on.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon5.addFile(QStringLiteral(":/image/32_32/audio_sound_on.png"), QSize(), QIcon::Disabled, QIcon::Off);
+        icon5.addFile(QStringLiteral(":/image/32_32/audio_sound_on.png"), QSize(), QIcon::Active, QIcon::Off);
+        icon5.addFile(QStringLiteral(":/image/32_32/audio_sound_on.png"), QSize(), QIcon::Selected, QIcon::Off);
+        soundBtn->setIcon(icon5);
+        soundBtn->setCheckable(true);
+        soundBtn->setAutoExclusive(true);
+
+        horizontalLayout_3->addWidget(soundBtn);
+
+        soundVolumnSlider = new QSlider(AudioPlayerDesctopDialog);
+        soundVolumnSlider->setObjectName(QStringLiteral("soundVolumnSlider"));
+        soundVolumnSlider->setMaximum(100);
+        soundVolumnSlider->setOrientation(Qt::Horizontal);
+
+        horizontalLayout_3->addWidget(soundVolumnSlider);
 
 
         verticalLayout->addLayout(horizontalLayout_3);
@@ -154,10 +219,30 @@ public:
         selectBtn->setText(QApplication::translate("AudioPlayerDesctopDialog", "...", Q_NULLPTR));
         curProlabel->setText(QApplication::translate("AudioPlayerDesctopDialog", "00:00", Q_NULLPTR));
         totalProlabel->setText(QApplication::translate("AudioPlayerDesctopDialog", "00:00", Q_NULLPTR));
-        playModelBtn->setText(QApplication::translate("AudioPlayerDesctopDialog", "\345\215\225\346\233\262\345\276\252\347\216\257", Q_NULLPTR));
-        preBtn->setText(QApplication::translate("AudioPlayerDesctopDialog", "<<", Q_NULLPTR));
-        playOrPauseBtn->setText(QApplication::translate("AudioPlayerDesctopDialog", "||", Q_NULLPTR));
-        nextBtn->setText(QApplication::translate("AudioPlayerDesctopDialog", ">>", Q_NULLPTR));
+#ifndef QT_NO_TOOLTIP
+        playModelBtn->setToolTip(QApplication::translate("AudioPlayerDesctopDialog", "<html><head/><body><p><span style=\" font-weight:600; color:#aa0000;\">Play Model</span></p></body></html>", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+        playModelBtn->setText(QString());
+#ifndef QT_NO_TOOLTIP
+        preBtn->setToolTip(QApplication::translate("AudioPlayerDesctopDialog", "<html><head/><body><p><span style=\" font-weight:600; color:#aa0000;\">Back Forward</span></p></body></html>", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+        preBtn->setText(QString());
+#ifndef QT_NO_TOOLTIP
+        playOrPauseBtn->setToolTip(QApplication::translate("AudioPlayerDesctopDialog", "<html><head/><body><p><span style=\" font-weight:600; color:#aa0000;\">Pause/Play</span></p></body></html>", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+        playOrPauseBtn->setText(QString());
+#ifndef QT_NO_TOOLTIP
+        nextBtn->setToolTip(QApplication::translate("AudioPlayerDesctopDialog", "<html><head/><body><p><span style=\" font-weight:600; color:#aa0000;\">Forward</span></p></body></html>", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+        nextBtn->setText(QString());
+#ifndef QT_NO_TOOLTIP
+        stopBtn->setToolTip(QApplication::translate("AudioPlayerDesctopDialog", "<html><head/><body><p><span style=\" font-weight:600; color:#aa0000;\">Stop</span></p></body></html>", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
+        stopBtn->setText(QString());
+        soundBtn->setText(QString());
+#ifndef QT_NO_TOOLTIP
+        soundVolumnSlider->setToolTip(QApplication::translate("AudioPlayerDesctopDialog", "<html><head/><body><p><span style=\" font-weight:600; color:#aa0000;\">Volumn</span></p></body></html>", Q_NULLPTR));
+#endif // QT_NO_TOOLTIP
     } // retranslateUi
 
 };

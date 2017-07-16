@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT += multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -26,11 +27,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
     audioplayerdesctopdialog.cpp \
-    audioplayermanager.cpp
+    audiofilesdialog.cpp \
+    audioplayercontrol.cpp
 
 HEADERS += \
     audioplayerdesctopdialog.h \
-    audioplayermanager.h
+    audiofilesdialog.h \
+    audioplayercontrol.h \
+    audiodefine.h
 
 FORMS += \
-    audioplayerdesctopdialog.ui
+    audioplayerdesctopdialog.ui \
+    audiofilesdialog.ui
+
+RESOURCES += \
+    image.qrc
+
+DISTFILES +=
