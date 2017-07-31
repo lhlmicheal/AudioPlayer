@@ -1,9 +1,8 @@
-//license-placeholder 2017-7-14 Tao Cheng
 #ifndef AUDIOMAINWINDOW_H
 #define AUDIOMAINWINDOW_H
 
 #include <QMainWindow>
-
+class AudioPlayWidget;
 namespace Ui {
 class AudioMainWindow;
 }
@@ -18,6 +17,8 @@ public:
 
 private:
     Ui::AudioMainWindow *ui;
+    AudioPlayWidget *mPlayWidget;
+    void initCenterWidget();
 };
 
 #endif // AUDIOMAINWINDOW_H
