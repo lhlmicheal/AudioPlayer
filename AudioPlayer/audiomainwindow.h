@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 class AudioPlayWidget;
+class AudioFilesDockWidget;
 namespace Ui {
 class AudioMainWindow;
 }
@@ -18,7 +19,8 @@ public:
 private:
     Ui::AudioMainWindow *ui;
     AudioPlayWidget *mPlayWidget;
-    void initCenterWidget();
+    AudioFilesDockWidget *mFilesWidget;
+    void initMainWidget();
 };
 
 #endif // AUDIOMAINWINDOW_H

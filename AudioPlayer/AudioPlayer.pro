@@ -26,15 +26,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
     audiomainwindow.cpp \
-    audioplaywidget.cpp
+    audioplaywidget.cpp \
+    audiofilesdockwidget.cpp
 
 HEADERS += \
     audiomainwindow.h \
-    audioplaywidget.h
+    audioplaywidget.h \
+    audiofilesdockwidget.h
 
 FORMS += \
     audiomainwindow.ui \
-    audioplaywidget.ui
+    audioplaywidget.ui \
+    audiofilesdockwidget.ui
 
 RESOURCES += \
     image.qrc

@@ -34,5 +34,12 @@
         <file>image/32_32/stop.png</file>
         <file>image/32_32/user_info.png</file>
         <file>image/32_32/vinyl_symbol.png</file>
+        <file>image/32_32/mixx_logo.png</file>
+        <file>image/32_32/ping_logo.png</file>
+        <file>image/32_32/sound_speaker.png</file>
+        <file>image/32_32/file_export.png</file>
+        <file>image/32_32/file_import.png</file>
+        <file>image/32_32/setting.png</file>
+        <file>image/32_32/tools.png</file>
     </qresource>
 </RCC>
