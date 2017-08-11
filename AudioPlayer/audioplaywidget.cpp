@@ -12,3 +12,28 @@ AudioPlayWidget::~AudioPlayWidget()
 {
     delete ui;
 }
+
+void AudioPlayWidget::initPanel()
+{
+
+}
+
+void AudioPlayWidget::playFileChanged(QString fileName, LrcInfo lrc)
+{
+
+}
+
+void AudioPlayWidget::playProgressChanged(int progress)
+{
+
+}
+
+void AudioPlayWidget::playModelChanged(int model)
+{
+
+}
+
+void AudioPlayWidget::soundEnablChanged(int type)
+{
+
+}

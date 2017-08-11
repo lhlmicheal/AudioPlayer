@@ -27,17 +27,21 @@ SOURCES += \
         main.cpp \
     audiomainwindow.cpp \
     audioplaywidget.cpp \
-    audiofilesdockwidget.cpp
+    audiofilesdockwidget.cpp \
+    audiostatuswidget.cpp
 
 HEADERS += \
     audiomainwindow.h \
     audioplaywidget.h \
-    audiofilesdockwidget.h
+    audiofilesdockwidget.h \
+    audiostatuswidget.h \
+    datadefine.h
 
 FORMS += \
     audiomainwindow.ui \
     audioplaywidget.ui \
-    audiofilesdockwidget.ui
+    audiofilesdockwidget.ui \
+    audiostatuswidget.ui
 
 RESOURCES += \
     image.qrc

@@ -2,15 +2,16 @@
 #include "ui_audiomainwindow.h"
 #include "audioplaywidget.h"
 #include "audiofilesdockwidget.h"
+#include "audiostatuswidget.h"
 
 AudioMainWindow::AudioMainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::AudioMainWindow)
     , mPlayWidget(new AudioPlayWidget)
     , mFilesWidget(new AudioFilesDockWidget)
+    , mStatusWidget(new AudioStatusWidget)
 {
     ui->setupUi(this);
-//    this->setFixedHeight(240);
     initMainWidget();
 }
 
@@ -21,8 +22,7 @@ AudioMainWindow::~AudioMainWindow()
 
 void AudioMainWindow::initMainWidget()
 {
-//    this->setContentsMargins(10, 10, 10, 10);
     this->setCentralWidget(mPlayWidget);
-//    mPlayWidget->setFixedSize(QSize(440, 240));
     this->addDockWidget(Qt::DockWidgetArea::RightDockWidgetArea, mFilesWidget);
+    this->statusBar()->addWidget(mStatusWidget, 0);
 }
