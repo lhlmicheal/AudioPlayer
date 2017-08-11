@@ -1,9 +1,9 @@
 #include "audioplaywidget.h"
 #include "ui_audioplaywidget.h"
 
-AudioPlayWidget::AudioPlayWidget(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::AudioPlayWidget)
+AudioPlayWidget::AudioPlayWidget(QWidget *parent)
+    : QWidget(parent)
+    , ui(new Ui::AudioPlayWidget)
 {
     ui->setupUi(this);
 }
@@ -15,7 +15,9 @@ AudioPlayWidget::~AudioPlayWidget()
 
 void AudioPlayWidget::initPanel()
 {
-
+    ui->playSlider->setValue(0);
+    ui->playSlider->setMinimum(0);
+    ui->playSlider->setMaximum(100);
 }
 
 void AudioPlayWidget::playFileChanged(QString fileName, LrcInfo lrc)

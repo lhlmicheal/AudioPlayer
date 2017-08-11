@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -28,14 +29,20 @@ SOURCES += \
     audiomainwindow.cpp \
     audioplaywidget.cpp \
     audiofilesdockwidget.cpp \
-    audiostatuswidget.cpp
+    audiostatuswidget.cpp \
+    audioplay/playaudiocontrol.cpp \
+    audiofile/audiofilemanager.cpp \
+    audiofile/filedocument.cpp
 
 HEADERS += \
     audiomainwindow.h \
     audioplaywidget.h \
     audiofilesdockwidget.h \
     audiostatuswidget.h \
-    datadefine.h
+    datadefine.h \
+    audioplay/playaudiocontrol.h \
+    audiofile/audiofilemanager.h \
+    audiofile/filedocument.h
 
 FORMS += \
     audiomainwindow.ui \

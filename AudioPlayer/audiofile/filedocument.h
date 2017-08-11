@@ -1,0 +1,5 @@
+//license-placeholder 2017-8-11 Liu Hai Long
+#ifndef FILEDOCUMENT_H
+#define FILEDOCUMENT_H
+
+#endif // FILEDOCUMENT_H
