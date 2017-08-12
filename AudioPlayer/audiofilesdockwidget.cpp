@@ -12,3 +12,18 @@ AudioFilesDockWidget::~AudioFilesDockWidget()
 {
     delete ui;
 }
+
+void AudioFilesDockWidget::elementAdded()
+{
+
+}
+
+void AudioFilesDockWidget::elementRemoved()
+{
+
+}
+
+void AudioFilesDockWidget::loadFinished()
+{
+
+}

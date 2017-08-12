@@ -2,6 +2,7 @@
 #ifndef FILEDOCUMENT_H
 #define FILEDOCUMENT_H
 #include <QObject>
+#include <QMap>
 class Element;
 class FileDocument : QObject
 {

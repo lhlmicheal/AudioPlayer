@@ -1,6 +1,8 @@
 //license-placeholder 2017-8-12 Liu Hai Long
 #include "element.h"
 
+int Element::elementId = 0;
+
 Element::Element(Type type, Element *parent)
     : mId(++ Element::elementId)
     , mType(type)
