@@ -17,3 +17,13 @@ void AudioFileManager::deteleInstance()
     if(_audiofilemanager) delete _audiofilemanager;
     _audiofilemanager = nullptr;
 }
+
+bool AudioFileManager::loadFile(QString &err)
+{
+    return true;
+}
+
+void AudioFileManager::findByDirection(int direction)
+{
+
+}

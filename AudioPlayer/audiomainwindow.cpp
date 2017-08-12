@@ -22,6 +22,7 @@ AudioMainWindow::~AudioMainWindow()
 
 void AudioMainWindow::initMainWidget()
 {
+    this->setWindowTitle(QLatin1String("Music makes people more nobel"));
     this->setCentralWidget(mPlayWidget);
     this->addDockWidget(Qt::DockWidgetArea::RightDockWidgetArea, mFilesWidget);
     this->statusBar()->addWidget(mStatusWidget, 0);

@@ -9,6 +9,13 @@ class AudioFileManager : QObject
 public:
     static AudioFileManager *instance();
     static void deteleInstance();
+
+    bool loadFile(QString &err);
+
+private slots:
+    void findByDirection(int direction);
+
+
 private:
     static AudioFileManager *_audiofilemanager;
 };

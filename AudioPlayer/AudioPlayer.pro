@@ -32,17 +32,19 @@ SOURCES += \
     audiostatuswidget.cpp \
     audioplay/playaudiocontrol.cpp \
     audiofile/audiofilemanager.cpp \
-    audiofile/filedocument.cpp
+    audiofile/filedocument.cpp \
+    audiofile/element.cpp
 
 HEADERS += \
     audiomainwindow.h \
     audioplaywidget.h \
     audiofilesdockwidget.h \
     audiostatuswidget.h \
-    datadefine.h \
     audioplay/playaudiocontrol.h \
     audiofile/audiofilemanager.h \
-    audiofile/filedocument.h
+    audiofile/filedocument.h \
+    define/lrcdefine.h \
+    audiofile/element.h
 
 FORMS += \
     audiomainwindow.ui \

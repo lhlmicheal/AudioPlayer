@@ -6,6 +6,7 @@ AudioPlayWidget::AudioPlayWidget(QWidget *parent)
     , ui(new Ui::AudioPlayWidget)
 {
     ui->setupUi(this);
+    initPanel();
 }
 
 AudioPlayWidget::~AudioPlayWidget()

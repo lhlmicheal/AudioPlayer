@@ -2,7 +2,8 @@
 #define AUDIOPLAYWIDGET_H
 
 #include <QWidget>
-#include "datadefine.h"
+#include "audioplay/playaudiocontrol.h"
+#include "define/lrcdefine.h"
 
 namespace Ui {
 class AudioPlayWidget;
@@ -30,6 +31,7 @@ private slots:
 
 private:
     Ui::AudioPlayWidget *ui;
+    PlayAudioControl mControl;
 };
 
 #endif // AUDIOPLAYWIDGET_H
