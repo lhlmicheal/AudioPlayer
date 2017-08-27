@@ -5,13 +5,14 @@
 PlayAudioControl::PlayAudioControl(QObject *parent)
     : QObject(parent)
     , mPlayer(new QMediaPlayer(this))
-    , mSound(SoundState::silence)
+    , mSound(SoundState::extroverte)
     , mMode(ModeState::cycle)
-    , mState(AudioState::unknown)
+    , mState(AudioState::play)
     , mProgress(0)
     , mVolume(SOUND_DEFAULT)
 {
     Q_ASSERT(mPlayer);
+    connect(mPlayer, SIGNAL(positionChanged(qint64)), this, SIGNAL(progressUpdata(qint64)));
 }
 
 int PlayAudioControl::volume()
@@ -21,9 +22,8 @@ int PlayAudioControl::volume()
 
 void PlayAudioControl::playFile(QString fileName)
 {
-    connect(mPlayer, SIGNAL(positionChanged(qint64)), this, SLOT(positionChanged(qint64)));
     mPlayer->setMedia(QUrl::fromLocalFile(fileName));
-    mPlayer->setVolume(50);
+    mPlayer->setVolume(SOUND_DEFAULT);
     mPlayer->play();
 }
 
@@ -37,8 +37,16 @@ void PlayAudioControl::modeChanged(int state)
 
 void PlayAudioControl::soundChanged()
 {
-    if(mSound == silence) mSound = extroverte;
-    else mSound = silence;
+    if(mSound == silence)
+    {
+        mSound = extroverte;
+        mPlayer->setVolume(mVolume);
+    }
+    else
+    {
+        mSound = silence;
+        mPlayer->setVolume(0);
+    }
     emit soundChange(mSound);
 }
 
@@ -48,6 +56,7 @@ void PlayAudioControl::pauseChanged()
         mState = play;
     else
         mState = pause;
+    mediaChange();
     emit pauseChange(mState);
 }
 
@@ -55,7 +64,16 @@ void PlayAudioControl::stoped()
 {
     if(mState == stop) return;
     mState = stop;
-    emit playStop();
+    mediaChange();
+    emit pauseChange(mState);
+}
+
+void PlayAudioControl::volumeChanged(int volume)
+{
+    if(mVolume == volume) return;
+    mVolume = volume;
+    mPlayer->setVolume(volume);
+    emit volumeChange(mVolume);
 }
 
 void PlayAudioControl::mediaChange()

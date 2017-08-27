@@ -5,7 +5,7 @@
 class QMediaPlayer;
 
 #define SOUND_DEFAULT 50
-class PlayAudioControl : QObject
+class PlayAudioControl : public QObject
 {
     Q_OBJECT
 public:
@@ -27,7 +27,7 @@ public:
         random = 2,
         cycle = 3
     };
-    explicit PlayAudioControl(QObject *parent = nullptr);
+    PlayAudioControl(QObject *parent = nullptr);
     int volume();
     //test
     void playFile(QString fileName);
@@ -37,13 +37,15 @@ signals:
     void modeChange(int state);
     void soundChange(int state);
     void playStop();
-    void progressUpdata(int progress);
+    void progressUpdata(qint64 progress);
+    void volumeChange(int value);
 
 private slots:
     void modeChanged(int state);
     void soundChanged();
     void pauseChanged();
     void stoped();
+    void volumeChanged(int volume);
 
 private:
     QMediaPlayer *mPlayer;

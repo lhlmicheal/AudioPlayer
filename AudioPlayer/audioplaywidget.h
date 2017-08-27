@@ -25,9 +25,12 @@ signals:
 
 private slots:
     void playFileChanged(QString fileName, LrcInfo lrc);
-    void playProgressChanged(int progress);
+    void playProgressChanged(qint64 progress);
     void playModelChanged(int model);
     void soundEnablChanged(int type);
+    //
+    void pauseChanged(int state);
+    void volumeChanged(int value);
 
     ///test
     void openaudio();
