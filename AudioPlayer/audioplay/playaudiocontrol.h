@@ -29,12 +29,15 @@ public:
     };
     explicit PlayAudioControl(QObject *parent = nullptr);
     int volume();
+    //test
+    void playFile(QString fileName);
 
 signals:
     void pauseChange(int state);
     void modeChange(int state);
     void soundChange(int state);
     void playStop();
+    void progressUpdata(int progress);
 
 private slots:
     void modeChanged(int state);

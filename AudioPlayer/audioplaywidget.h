@@ -29,6 +29,9 @@ private slots:
     void playModelChanged(int model);
     void soundEnablChanged(int type);
 
+    ///test
+    void openaudio();
+
 private:
     Ui::AudioPlayWidget *ui;
     PlayAudioControl mControl;

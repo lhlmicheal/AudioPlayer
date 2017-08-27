@@ -6,7 +6,7 @@ PlayAudioControl::PlayAudioControl(QObject *parent)
     : QObject(parent)
     , mPlayer(new QMediaPlayer(this))
     , mSound(SoundState::silence)
-    , mMode(ModeState::order)
+    , mMode(ModeState::cycle)
     , mState(AudioState::unknown)
     , mProgress(0)
     , mVolume(SOUND_DEFAULT)
@@ -17,6 +17,14 @@ PlayAudioControl::PlayAudioControl(QObject *parent)
 int PlayAudioControl::volume()
 {
     return mVolume;
+}
+
+void PlayAudioControl::playFile(QString fileName)
+{
+    connect(mPlayer, SIGNAL(positionChanged(qint64)), this, SLOT(positionChanged(qint64)));
+    mPlayer->setMedia(QUrl::fromLocalFile(fileName));
+    mPlayer->setVolume(50);
+    mPlayer->play();
 }
 
 void PlayAudioControl::modeChanged(int state)
